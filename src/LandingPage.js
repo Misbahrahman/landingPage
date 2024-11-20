@@ -26,7 +26,7 @@ const LandingPage = () => {
       servicesSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
-  
+
   const scrollToSection = (elementId) => {
     const element = document.getElementById(elementId);
     if (element) {
@@ -65,25 +65,27 @@ const LandingPage = () => {
                 Through AI
               </span>
             </h1>
-            
+
             <p className="text-2xl md:text-3xl text-gray-300 max-w-4xl mx-auto leading-relaxed opacity-0 animate-[fadeIn_1s_ease-out_0.9s_forwards]">
-              We are a forward-thinking AI firm dedicated to driving your organization to new horizons through strong, scalable, and custom AI solutions.
+              Committed to driving your organization toward exceptional success with scalable, powerful, and highly customized AI solutions.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6 opacity-0 animate-[fadeUp_1s_ease-out_1.2s_forwards]">
-              <GradientButton 
-                size="large" 
+              <GradientButton
+                size="large"
                 variant="primary"
                 withArrow
                 className="min-w-[240px] text-lg"
+                onClick={() => window.open('https://form.jotform.com/243202155079451', '_blank')}
               >
-                Explore Solutions
+                Connect with us
               </GradientButton>
-              
-              <GradientButton 
-                size="large" 
+
+              <GradientButton
+                size="large"
                 variant="outline"
                 className="min-w-[240px] text-lg"
+                onClick={() => window.open('https://www.linkedin.com/company/alzairai/', '_blank')}
               >
                 Learn More
               </GradientButton>
@@ -91,12 +93,12 @@ const LandingPage = () => {
           </div>
 
           {/* Scroll indicator */}
-          <div 
+          <div
             onClick={scrollToNext}
-            className="absolute bottom-12 left-1/2 -translate-x-1/2 cursor-pointer opacity-0 animate-[fadeIn_1s_ease-out_1.5s_forwards]"
+            className="absolute bottom-12 inset-x-0 mx-auto w-max cursor-pointer opacity-0 animate-[fadeIn_1s_ease-out_1.5s_forwards]"
           >
             <div className="flex flex-col items-center gap-2 text-gray-400 hover:text-orange-500 transition-colors duration-300">
-              <span className="text-sm tracking-wider">Scroll to explore</span>
+              <div className="text-sm tracking-wider">Scroll to explore</div>
               <ChevronDown className="w-6 h-6 animate-bounce" />
             </div>
           </div>
@@ -105,10 +107,10 @@ const LandingPage = () => {
         {/* Scroll progress indicator */}
         <div className="fixed right-4 top-1/2 -translate-y-1/2 hidden lg:block opacity-0 animate-[fadeIn_1s_ease-out_1.5s_forwards]">
           <div className="h-24 w-0.5 bg-gray-700 rounded-full">
-            <div 
+            <div
               className="w-full bg-orange-500 rounded-full transition-all duration-300"
-              style={{ 
-                height: `${Math.min((scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100, 100)}%` 
+              style={{
+                height: `${Math.min((scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100, 100)}%`
               }}
             />
           </div>
@@ -120,10 +122,10 @@ const LandingPage = () => {
         {/* Gradient background effects */}
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl" />
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-orange-500/20 rounded-full blur-3xl" />
-        
+
         <div className="relative max-w-7xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold mb-16 opacity-0 animate-[fadeIn_1s_ease-out_forwards]">
-            Our Services
+            AI Solutions, Customized for Your Needs
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
@@ -143,10 +145,10 @@ const LandingPage = () => {
                 `}>
                   {/* Glass background */}
                   <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl" />
-                  
+
                   {/* Border gradient */}
                   <div className="absolute inset-[1px] rounded-3xl bg-gradient-to-br from-white/20 to-white/5" />
-                  
+
                   {/* Content container */}
                   <div className="relative h-full flex flex-col items-center text-center">
                     {/* Icon */}
@@ -157,28 +159,17 @@ const LandingPage = () => {
                         </div>
                       </div>
                     </div>
-                    
+
                     {/* Title */}
                     <h3 className="text-2xl font-semibold mb-4 bg-gradient-to-r from-white to-white/90 bg-clip-text">
                       {service.title}
                     </h3>
-                    
+
                     {/* Description */}
                     <p className="text-gray-300/90 leading-relaxed flex-grow">
                       {service.description}
                     </p>
-                    
-                    {/* Button */}
-                    <div className="mt-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                      <GradientButton 
-                        variant="outline" 
-                        size="small"
-                        withArrow
-                        className="text-sm backdrop-blur-xl"
-                      >
-                        Learn More
-                      </GradientButton>
-                    </div>
+
                   </div>
                 </div>
               </div>
@@ -191,8 +182,8 @@ const LandingPage = () => {
       <IndustriesSection />
 
       {/* CTA Section - Increased height */}
-      <Section 
-        id="contact" 
+      <Section
+        id="contact"
         className="bg-gradient-to-r from-blue-900/20 to-orange-900/20 py-32 min-h-[80vh] flex items-center"
       >
         <div className="max-w-4xl mx-auto flex flex-col items-center opacity-0 animate-[fadeIn_1s_ease-out_forwards] px-4">
@@ -202,7 +193,7 @@ const LandingPage = () => {
           <p className="text-xl text-gray-300 mb-12 max-w-2xl">
             Join leading organizations that are already leveraging our AI solutions to drive innovation and growth
           </p>
-          <GradientButton size="large" withArrow className="text-lg">
+          <GradientButton size="large" withArrow className="text-lg"  onClick={() => window.open('https://form.jotform.com/243202155079451', '_blank')} >
             Get Started Now
           </GradientButton>
         </div>
@@ -216,14 +207,16 @@ const LandingPage = () => {
             {/* Company Info */}
             <div className="space-y-4">
               <h3 className="text-xl font-bold bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent">
-                Company Name
+                Alzair AI
               </h3>
               <p className="text-gray-400 text-sm">
                 Bridging Vision and Technology Through AI
               </p>
               <div className="flex justify-around w-32">
                 <Twitter className="w-5 h-5 text-gray-400 hover:text-white transition-colors cursor-pointer" />
-                <Linkedin className="w-5 h-5 text-gray-400 hover:text-white transition-colors cursor-pointer" />
+                <a href="https://www.linkedin.com/company/alzairai" target="_blank" rel="noopener noreferrer">
+                  <Linkedin className="w-5 h-5 text-gray-400 hover:text-white transition-colors cursor-pointer" />
+                </a>
                 <Github className="w-5 h-5 text-gray-400 hover:text-white transition-colors cursor-pointer" />
               </div>
             </div>
@@ -263,8 +256,8 @@ const LandingPage = () => {
                     contact@company.com
                   </a>
                 </p>
-                <p>123 AI Street</p>
-                <p>Tech City, TC 12345</p>
+                <p>Hyderabad</p>
+
               </div>
             </div>
           </div>

@@ -33,7 +33,7 @@ export const Header = ({
               {item}
             </NavLink>
           ))}
-          <GradientButton size="default">
+          <GradientButton size="default" onClick={() => window.open('https://form.jotform.com/243202155079451', '_blank')}>
             Get Started
           </GradientButton>
         </nav>

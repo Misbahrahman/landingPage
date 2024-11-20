@@ -42,17 +42,18 @@ export const Card = ({
     <div 
       className={`
         ${variants[variant]}
-        transition-all duration-300 
-        hover:scale-105 hover:shadow-lg hover:shadow-blue-500/20 
+        transition-all duration-500 ease-out
+        hover:scale-110 hover:-translate-y-2 hover:shadow-xl hover:shadow-blue-500/30
         flex flex-col items-center justify-center
-        opacity-0 animate-[fadeIn_1s_ease-out_forwards]
+        opacity-0 animate-zoomInRotate
         ${className}
       `}
-      style={{ animationDelay: `${index * 0.1}s` }}
+      style={{ 
+        animationDelay: `${index * 0.15}s`,
+        perspective: '1000px'
+      }}
     >
       {children}
     </div>
   );
 };
-
-
